@@ -1,0 +1,109 @@
+<?php
+ /*------------------------------------------------------------------------
+  # VenusTheme Layer Slider Module 
+  # ------------------------------------------------------------------------
+  # author:    VenusTheme.Com
+  # copyright: Copyright (C) 2012 http://www.venustheme.com. All Rights Reserved.
+  # @license: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+  # Websites: http://www.venustheme.com
+  # Technical Support:  http://www.venustheme.com/
+-------------------------------------------------------------------------*/
+$randID = rand( 20,   rand() );
+$sliderParams['hide_navigator_after'] = isset($sliderParams['show_navigator'])&&$sliderParams['show_navigator']?0:$sliderParams['hide_navigator_after'];
+$background_color = isset($sliderParams['background_color'])?' background-color:'.$sliderParams['background_color'].';':"";
+$hideTimerBar     = isset( $sliderParams['show_time_line'] ) && $sliderParams['show_time_line'] ? "on": 'off';
+$class     = isset( $sliderParams['fullwidth'] ) && !empty($sliderParams['fullwidth']) ? $sliderParams['fullwidth']: 'boxed';
+$fullwidth = $class =="fullwidth"?"on":"off";
+$fullscreen = $class =="fullscreen"?"on":"off";
+
+$slider_background = "";
+if(isset($setting['general']) && isset($setting['general']['src']) && $setting['general']['src']) {
+  $slider_background = "background-image: url('".$setting['general']['src']."'); background-size: ".$setting['general']['size'].";background-position:".$setting['general']['position'].";background-repeat: ". $setting['general']['repeat'].";";
+}
+
+?>
+<?php if( count($banners) ) { ?>
+
+<?php if( $class =="boxed") { ?>
+<div class="layerslider-wrapper" style="max-width:<?php echo $sliderParams['width'];?>px;">
+<?php } ?>
+
+  <div class="bannercontainer banner-<?php echo trim($class);?>" style="padding: <?php echo $sliderParams['padding'];?>;margin: <?php echo $sliderParams['margin'];?>;<?php echo $background_color.$slider_background; ?>">
+          <div id="sliderlayer<?php echo $randID; ?>" class="rev_slider <?php echo trim($class);?>banner" style="width:100%;height:<?php echo $sliderParams['height'];?>px; " >
+
+            <ul>
+                <?php
+                  foreach($banners as $k => $banner) {
+                    echo $this->renderBannerElements($banner, $sliderParams);
+                  }
+                ?>
+            </ul>
+
+          <?php if( $sliderParams['show_time_line']  ) { ?> 
+          <div class="tp-bannertimer tp-<?php echo $sliderParams['time_line_position']; ?>"></div>
+          <?php } ?>
+        </div>
+    </div>
+
+<?php if( $class =="boxed") { ?>
+ </div>
+<?php } ?>
+      <!--
+      ##############################
+       - ACTIVATE THE BANNER HERE -
+      ##############################
+      -->
+      <script type="text/javascript">
+
+        var tpj=jQuery;
+         
+      
+
+        if (tpj.fn.cssOriginal!=undefined)
+          tpj.fn.css = tpj.fn.cssOriginal;
+
+          tpj('#sliderlayer<?php echo $randID; ?>').revolution(
+            {
+              delay:<?php echo $sliderParams['delay'];?>,
+              startheight:<?php echo $sliderParams['height'];?>,
+              startwidth:<?php echo $sliderParams['width'];?>,
+
+
+              hideThumbs:<?php echo (int)$sliderParams['hide_navigator_after'];?>,
+
+              thumbWidth:<?php echo (int)$sliderParams['thumbnail_width'];?>,           
+              thumbHeight:<?php echo (int)$sliderParams['thumbnail_height'];?>,
+              thumbAmount:<?php echo (int)$sliderParams['thumbnail_amount'];?>,
+
+              navigationType:"<?php echo $sliderParams['navigator_type'];?>",       
+              navigationArrows:"<?php echo $sliderParams['navigator_arrows'];?>",
+
+              <?php if( $sliderParams['navigation_style'] != 'none' ) {   ?>
+              
+              navigationStyle:"<?php echo $sliderParams['navigation_style'];?>",
+
+              <?php } ?>
+          
+              navOffsetHorizontal:<?php echo (int)$sliderParams['offset_horizontal'];?>,
+              navOffsetVertical:<?php echo (int)$sliderParams['offset_vertical'];?>,  
+
+              touchenabled:"<?php echo ($sliderParams['touch_mobile']?'on':'off') ?>",      
+              onHoverStop:"<?php echo ($sliderParams['stop_on_hover']?'on':'off') ?>",            
+              shuffle:"<?php echo ($sliderParams['shuffle_mode']?'on':'off') ?>", 
+              stopAtSlide:-1,           
+              stopAfterLoops:-1,            
+
+              hideCaptionAtLimit:0,       
+              hideAllCaptionAtLilmit:0,       
+              hideSliderAtLimit:0,
+              hideTimerBar: "<?php echo $hideTimerBar; ?>",     
+              fullWidth:"<?php echo $fullwidth; ?>",
+              forceFullWidth:"<?php echo $fullwidth; ?>",
+              fullScreen:"<?php echo $fullscreen; ?>",
+              lazyLoad: "<?php echo (isset($sliderParams['lazy_load']) && $sliderParams['lazy_load'])?'on':'off';?>",
+              shadow:<?php echo (int)$sliderParams['shadow_type'];?>
+
+
+            });
+      </script>
+<?php } ?>

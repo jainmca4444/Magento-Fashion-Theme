@@ -1,0 +1,216 @@
+----------------------------------------------------------
+Static Block 1
+----------------------------------------------------------
+Block Title:    Electronics Landing
+Identifier:     electronics-landing
+Store View:     All
+Status:         enabled
+Content: 
+<div class="left" style="width:284px; margin-right:25px;">
+<h3 style="margin-bottom:0;"><a href="{{store direct_url="electronics/cell-phones.html"}}"><img src="{{skin url='images/media/head_electronics_cellphones.gif}}" alt="Cell Phones" style="display:block; border:0;"/></h3>
+<p><img src="{{skin url='images/media/electronics_cellphones.jpg}}" alt="" usemap="#Map" border="0"/></p>
+</div>
+<div class="left" style="width:284px;">
+<h3 style="margin-bottom:0;"><a href="{{store direct_url="electronics/cameras/digital-cameras.html"}}"><img src="{{skin url='images/media/head_electronics_digicamera.gif}}" alt="Digital Cameras" style="display:block; border:0;"/></a></h3>
+<p><img src="{{skin url='images/media/electronics_digitalcameras.jpg}}" alt="" usemap="#Map2" border="0"/></p>
+</div>
+<div class="right" style="width:284px;">
+<h3 style="margin-bottom:0;"><a href="{{store direct_url="electronics/computers/laptops.html"}}"><img src="{{skin url='images/media/head_electronics_laptops.gif}}" alt="Laptops" style="display:block; border:0;"/></a></h3>
+<p><img src="{{skin url='images/media/electronics_laptops.jpg}}" alt="" usemap="#Map3" border="0"/></p>
+</div>
+<div class="clear"></div>
+
+<map name="Map">
+  <area shape="rect" coords="14,154,78,182" href="{{store direct_url="electronics/cell-phones.html?manufacturer=3"}}">
+  <area shape="rect" coords="12,177,80,209" href="{{store direct_url="electronics/cell-phones.html?manufacturer=20"}}">
+  <area shape="rect" coords="104,158,167,181" href="{{store direct_url="electronics/cell-phones.html?manufacturer=2"}}">
+  <area shape="rect" coords="103,181,179,208" href="{{store direct_url="electronics/cell-phones.html?manufacturer=101"}}">
+ <area shape="rect" coords="16,203,273,432" href="{{store direct_url="electronics/cell-phones/blackberry-8100-pearl.html"}}">
+</map>
+
+<map name="Map2">
+  <area shape="rect" coords="14,152,75,179" href="{{store direct_url="electronics/cameras/digital-cameras.html?manufacturer=33"}}">
+  <area shape="rect" coords="109,154,163,183" href="{{store direct_url="electronics/cameras/digital-cameras.html?manufacturer=31"}}">
+  <area shape="rect" coords="14,177,73,208" href="{{store direct_url="electronics/cameras/digital-cameras.html?manufacturer=32"}}">
+  <area shape="rect" coords="106,180,177,211" href="{{store direct_url="electronics/cameras/digital-cameras.html?manufacturer=34"}}">
+</map>
+
+
+<map name="Map3">
+  <area shape="rect" coords="15,155,58,179" href="{{store direct_url="electronics/computers/laptops?computer_manufacturers=79"}}">
+  <area shape="rect" coords="114,152,159,180" href="{{store direct_url="electronics/computers/laptops?computer_manufacturers=76"}}">
+  <area shape="rect" coords="13,178,67,205" href="{{store direct_url="electronics/computers/laptops?computer_manufacturers=77"}}">
+  <area shape="rect" coords="114,180,178,205" href="{{store direct_url="electronics/computers/laptops?computer_manufacturers=74"}}">
+  <area shape="rect" coords="13,310,154,434" href="{{store direct_url="electronics/computers/laptops/acer-ferrari-3200-notebook-computer-pc.html"}}">
+  <area shape="rect" coords="167,310,279,440" href="{{store direct_url="electronics/computers/laptops/toshiba-satellite-a135-s4527-155-4-notebook-pc-intel-pentium-dual-core-processor-t2080-1-gb-ram-120-gb-hard-drive-supermulti-dvd-drive-vista-premium.html"}}">
+</map>
+
+
+----------------------------------------------------------
+Static Block 2
+----------------------------------------------------------
+Block Title:    Cellphones Landing
+Identifier:     cellphones-landing
+Store View:     All
+Status:         enabled
+Content: 
+<a href="{{store direct_url="electronics/cell-phones/sony-ericsson-w810i.html"}}"><img src="{{skin url='images/media/cell_phone_landing_banner1.jpg}}" alt=""/></a>
+
+
+----------------------------------------------------------
+Static Block 3
+----------------------------------------------------------
+Block Title:    Footer Links
+Identifier:     footer_links
+Store View:     All
+Status:         enabled
+Content: 
+<ul>
+<li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
+<li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
+<li class="last privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
+</ul>
+
+
+----------------------------------------------------------
+Static Block 4
+----------------------------------------------------------
+Block Title:    Cookie restriction notice
+Identifier:     cookie_restriction_notice_block
+Store View:     All
+Status:         enabled
+Content: 
+<p>This website requires cookies to provide all of its features. For more information on what data is contained in the cookies, please see our <a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy page</a>. To accept cookies from this site, please click the Allow button below.</p>
+
+
+----------------------------------------------------------
+Static Block 5
+----------------------------------------------------------
+Block Title:    Latest-blog-Newsletter
+Identifier:     latest-blog-newsletter
+Store View:     All
+Status:         enabled
+Content: 
+<div class="row">
+					<div class="col-lg-9 col-sm-7 col-xs-12"> {{block type="ves_blog/latest" name="ves.latest"  template="ves/blog/block/latest.phtml"}}</div>
+					<div class="col-lg-3 col-sm-5 col-xs-12">  {{block type="newsletter/subscribe" name="newsletter" template="newsletter/custom_subscribe.phtml"}}</div>
+				</div>
+
+
+----------------------------------------------------------
+Static Block 6
+----------------------------------------------------------
+Block Title:    Image promotion
+Identifier:     image_promotion
+Store View:     Main Website > English, Main Website > French
+Status:         enabled
+Content: 
+<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="block banner1 effect"><a href="#" class="overlay"> <img src="{{media url="wysiwyg/image_promotion/banner1.jpg"}}" class="img-responsive img-banner" alt="" /></a></div>
+
+					<div class="block banner2 effect row">
+						<div class="col-lg-6 col-md-6 col-sm-6"><a href="#" class="overlay"><img src="{{media url="wysiwyg/image_promotion/banner2.jpg"}}" class="img-responsive img-banner" alt="" /></a></div>
+
+						<div class="col-lg-6 col-md-6 col-sm-6"><a href="#" class="overlay"><img src="{{media url="wysiwyg/image_promotion/banner3.jpg"}}" class="img-responsive img-banner" alt="" /></a></div>
+					</div>
+				</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="block banner3 effect"><a href="#" class="overlay"><img src="{{media url="wysiwyg/image_promotion/banner4.jpg"}}" class="img-responsive img-banner" alt="" /></a></div>
+
+				<div class="block banner4 effect row">
+					<div class="col-lg-6 col-md-6 col-sm-6"><a href="#" class="overlay"><img src="{{media url="wysiwyg/image_promotion/banner5.jpg"}}" class="img-responsive img-banner" alt="" /></a></div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6"><a href="#" class="overlay"><img src="{{media url="wysiwyg/image_promotion/banner6.jpg"}}" class="img-responsive img-banner" alt="" /></a></div>
+				</div>
+			</div>
+		</div>
+
+
+----------------------------------------------------------
+Static Block 7
+----------------------------------------------------------
+Block Title:    Footer Newsletter
+Identifier:     footer-newsletter
+Store View:     Main Website > English, Main Website > French, Main Website > English, Main Website > French
+Status:         enabled
+Content: 
+<p>{{block type="newsletter/subscribe" name="custom.newsletter" template="newsletter/custom_subscribe.phtml" }}</p>
+
+
+----------------------------------------------------------
+Static Block 8
+----------------------------------------------------------
+Block Title:    Free shipping
+Identifier:     free-shipping
+Store View:     Main Website > English, Main Website > French, Main Website > English, Main Website > French, Main Website > English, Main Website > French
+Status:         enabled
+Content: 
+<div class="support hidden-sm hidden-xs clearfix">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 service">
+<div class="box-media"><em class="icon media-fs">&nbsp;</em> <span class="media-body"><span class="title-media">free shipping</span>on order over $150.00</span></div>
+</div>
+<div class="service col-lg-4 col-md-4 col-sm-4 col-xs-4">
+<div class="box-media"><em class="icon media-sc">&nbsp;</em> <span class="media-body"><span class="title-media">free return</span>free 90 days return</span></div>
+</div>
+<div class="service col-lg-4 col-md-4 col-sm-4 col-xs-4">
+<div class="box-media"><em class="icon media-th">&nbsp;</em> <span class="media-body"><span class="title-media">member discount</span>free register</span></div>
+</div>
+</div>
+
+
+----------------------------------------------------------
+Static Block 9
+----------------------------------------------------------
+Block Title:    Banner fullwidth
+Identifier:     banner-fullwidth
+Store View:     Main Website > English, Main Website > French
+Status:         enabled
+Content: 
+<div class="row hidden-xs">
+<div class="col-lg-6 col-md-6 col-sm-6">
+<div class="effect"><a class="overlay" href="#"><img class="img-responsive" src="{{media url="wysiwyg/banner/banner1.jpg"}}" alt="" /> </a></div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+<div class="effect"><a class="overlay" href="#"><img class="img-responsive" src="{{media url="wysiwyg/banner/banner2.jpg"}}" alt="" /></a></div>
+</div>
+</div>
+
+
+----------------------------------------------------------
+Static Block 10
+----------------------------------------------------------
+Block Title:    block-productcarousel-footer
+Identifier:     block-productcarousel-footer
+Store View:     Main Website > English, Main Website > French
+Status:         disabled
+Content: 
+<div class="row">
+<div class="col-lg 3 col-md-3 col-sm-6 col-xs-12">{{block type="ves_productcarousel4/list" name="productcarousel4.list" template="ves/productcarousel4/default.phtml"}}</div>
+<div class="col-lg 3 col-md-3 col-sm-6 col-xs-12">{{block type="ves_productcarousel4/list" name="productcarousel4.list" template="ves/productcarousel4/default.phtml"}}</div>
+<div class="col-lg 3 col-md-3 col-sm-6 col-xs-12">{{block type="ves_productcarousel5/list" name="productcarousel5.list" template="ves/productcarousel5/default.phtml"}}</div>
+<div class="col-lg 3 col-md-3 col-sm-6 col-xs-12">{{block type="ves_productcarousel6/list" name="productcarousel6.list" template="ves/productcarousel6/default.phtml"}}</div>
+</div>
+
+
+----------------------------------------------------------
+Static Block 11
+----------------------------------------------------------
+Block Title:    Left-subscribe
+Identifier:     left-subscribe
+Store View:     Main Website > English, Main Website > French
+Status:         enabled
+Content: 
+{{block type="newsletter/subscribe" name=â€œcustom.newsletterâ€ template="newsletter/subscribe.phtml"}}
+
+
+----------------------------------------------------------
+Static Block 12
+----------------------------------------------------------
+Block Title:    Left_banner
+Identifier:     left-banner
+Store View:     Main Website > English, Main Website > French
+Status:         enabled
+Content: 
+<div class="block"><img class="img-responsive" src="{{media url="wysiwyg/staticblock/banner1-279x438.jpg"}}" alt="" /></div>

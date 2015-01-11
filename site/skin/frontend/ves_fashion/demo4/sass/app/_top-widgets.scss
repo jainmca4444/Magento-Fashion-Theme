@@ -1,0 +1,39 @@
+/*** widgets using inside megamenu ***/
+.#{$app-brand-prefix}-widget{
+	.menu-title {
+		@include rtl-text-align-left(); 
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		padding-bottom:20px;
+	}
+	.product-block{
+		@include clearfix();      	
+	 	.image{
+	 		@include rtl-float-left();
+	 		@include rtl-margin-right(10px);
+		    overflow: inherit;
+	 	}
+	 	.action, .#{$app-brand-prefix}-colorbox, .colorbox, .image-gallery{
+	 		display: none;
+	 	}
+	 	a {
+	 		@include rtl-text-align-left();
+	 	} 
+	 	.price,
+	 	.price-box {@include rtl-text-align-left();}	 
+	}
+}
+
+#cart-sidebar {
+	li {
+		@include rtl-float-left();
+		width: 100%;
+		padding-bottom: 10px;
+		.product-image {
+			@include rtl-float-left();
+			@include rtl-margin-right(10px);
+		}
+	}
+}
+
+.widget-image img { @include img-responsive();}

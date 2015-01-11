@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<default translate="label">
+		<reference name="head">
+	    	<action method="addItem"><type>skin_css</type><name>ves_productcarousel/style.css</name></action>
+	  	</reference>
+		<reference name="left">
+			<block type="ves_productcarousel/list" after="-" name="productcarousel.list" />			
+		</reference>
+	</default>
+</layout>

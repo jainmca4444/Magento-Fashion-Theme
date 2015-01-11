@@ -1,0 +1,340 @@
+/******************************************************
+ * $package Ves Magento Theme Framework for Magento 1.9.0.1
+ * $version 3.0
+ * $author http://www.venustheme.com
+ * $copyright   Copyright (C) Augus 2013 venustheme.com <$email:venustheme$gmail.com>.All rights reserved.
+ * $license     GNU General Public License version 2
+ *******************************************************/
+body{   
+    &.layout-boxed-md{
+        background: url("#{$image-theme-path}pattern/pattern19.png");
+        #page{  
+            max-width: $container-desktop + 20px; 
+            @include box-shadow(0 0 5px lighten($gray, 50%));
+            margin: 0 auto;    
+            background: $white;
+            .container { width:auto;}
+        }          
+    }
+    &.layout-boxed-lg{
+        background: url("#{$image-theme-path}pattern/pattern18.png");
+        #page{  
+            max-width: $container-lg + 20px; 
+            @include box-shadow(0 0 5px lighten($gray, 50%));
+            margin: 0 auto;    
+            background: $white;
+        }
+    }
+} 
+
+##{$app-brand-prefix}-wrapper {
+    width: auto;
+    margin:0 auto;
+    background:#fff;
+}
+
+/*
+* HEADER 
+*/
+#header {
+    border:none;
+    margin: 0 auto;
+    @include transition(all 0.35s ease 0s);
+    z-index: 999;
+    #header-main{
+        color: $header-text-color; 
+        min-height: 95px;   
+        .header-wrap{
+            text-align: center; padding: $header-main-padding;
+        }
+        .inner{
+            @include rtl-text-align-left();           
+            & > *{
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }   
+    }
+    /* Keep header when scrolling*/
+    &.navbar-fixed-top {
+        position: relative;
+    }
+    &.hide-bar {
+        @include box-shadow(0 3px 2px 0 rgba(0, 0, 0, 0.25));
+        margin-top: -41px;
+        z-index: 9999 !important;
+        background:$white;
+        position:fixed;
+    }
+
+    .show-mobile{ 
+        @include clearfix();  
+        @include rtl-text-align-right();      
+        > div{
+            margin: 0;
+            padding: 0;
+            position: relative;
+            float: none !important;
+            @include inline-block();
+            &:hover{
+                .inner-toggle{
+                    display: block;
+                }
+            }
+        }
+        .quickaccess-toggle{
+            @include size(30px, 30px);
+            line-height: $line-height-computed + 7;
+            text-align: center;            
+            cursor: pointer;  
+            border: 1px solid $border-color;    
+            .fa{                
+                margin: 0;
+                font-size: $respon-topbar-icon-font-size;
+            }
+            &:hover, &:focus, &:active {
+                background-color: $white;
+            }                 
+        }
+        .inner-toggle{
+            color: #8c8c8c;
+            display: none;
+            position: absolute; 
+            left: auto;
+            min-width: 160px;
+            z-index: 99;
+            border: 1px solid $border-color;
+            background: $white;
+            padding: 15px;
+            @include rtl-text-align-left(); 
+            @include rtl-right(0);                     
+        }  
+    }
+}
+
+/**LOGO**/
+.logo { 
+    z-index: 999;
+    strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; text-indent:-999em; overflow:hidden; } 
+}
+
+
+##{$app-brand-prefix}-masshead {
+   .inner{
+        @include container-layout-variant($masshead-color, $masshead-bg, $masshead-color, lighten($masshead-color,5%) );   
+        padding: $masshead-content-padding;    
+   }
+}
+
+
+/*
+* NAVIGATION
+*/
+##{$app-brand-prefix}-mainnav {
+    margin-bottom: 25px;
+}
+/*
+
+/*
+* SLIDESHOW 
+*/
+##{$app-brand-prefix}-slideshow {   
+}
+
+
+/*
+* SHOWCASE 
+*/
+##{$app-brand-prefix}-showcase {
+    .#{$block-selector} {
+        margin-bottom: 0;
+        position: relative;
+        z-index: 2;
+        .#{$block-content-selector} { 
+            background:$nocolor;
+        }
+    }
+
+}
+/*
+* PROMOTION TOP 
+*/
+##{$app-brand-prefix}-promotion {    
+    
+}
+
+/*
+* Breadcrumbs 
+*/
+##{$app-brand-prefix}-breadcrumbs {     
+}
+.breadcrumbs { 
+    font-size: 12px;
+    line-height: 1em; 
+    margin:0 0 25px; 
+    li { display:inline; }
+    strong{ font-weight: normal;}
+}
+
+/*
+* MAIN CONTENT
+*/  
+#content {
+    min-height: 400px;
+}
+
+.wrapper-danger{
+
+}
+.wrap-outline{
+
+}
+
+##{$app-brand-prefix}-brandcarousel{
+    .carousel-inner > .item { 
+        a {
+            display:block;
+            img { 
+                transform: rotateY(0deg);
+                transform-style: preserve-3d;
+                transition: all 600ms ease-in-out 0s;
+            }
+            &:hover {
+                img {
+                    transform: rotateY(-360deg);
+                }  
+            } 
+        }
+    }  
+}
+
+
+##{$app-brand-prefix}-massbottom { 
+    img {
+        @include img-responsive();
+    }  
+}
+
+/*end*/
+/* FOOTER */
+##{$app-brand-prefix}-footer {
+    ul, ol {
+            list-style: none;
+        li{
+            padding: 6px 0px;
+        }
+    } 
+}
+
+.footer-top{
+    .inner{
+        padding: 0; 
+    }
+    .block-ft {
+        padding:43px 0;
+        .icon-ft {
+            color: #fff;
+            @include rtl-float-left();
+            font-size: 40px;
+        }
+
+        .content-ft {
+            color: #fff;
+            .main-content-ft {
+                text-transform: uppercase;
+                font-size: 20px;
+            }
+        }
+    }
+ }
+    
+.footer-center{
+    background: $footer-center-outside-bg;
+   .inner{
+        @include container-layout-variant($footer-center-color, $footer-center-bg, $footer-center-color, lighten($footer-center-color,5%) );   
+        padding: $footer-center-content-padding;  
+   }
+   li,
+   a {
+        font-size: $font-size-base + 1;
+        &:hover {
+            color: $theme-color !important;
+            text-decoration: none;
+        }
+    }
+    em {
+        @include rtl-padding-right(10px);
+    }
+    .aboutus,
+    .locations,
+    .locations .media {
+        em{
+            background:#333;  
+            line-height: 26px;
+            @include border-radius(5px);
+            @include size(26px, 26px);
+            @include rtl-padding-right(0);
+            @include rtl-margin-right(5px);
+        }
+    }
+
+    .locations {
+        .media {
+            > .pull-left {
+                @include rtl-margin-right(10px);
+            }
+            &:hover {
+                color: $theme-color-default;
+            }
+        }
+    }
+
+}   
+.footer-bottom{
+    background: $white;
+   .inner{
+    @include container-layout-variant($footer-bottom-color, $footer-bottom-bg, $footer-bottom-color, lighten($footer-bottom-color,5%) );   
+    padding: $footer-bottom-content-padding;    
+   }
+}      
+
+
+/* POWER BY */
+#powered {
+    position:relative; 
+    background: $power-bg;
+    color:$power-color; 
+    font-family: $power-font-family;
+    font-size: $font-size-base;
+    text-align:center;
+    .container {
+        border-top: 1px solid $border-color;
+        padding: 45px 0; 
+    }
+
+    a{
+        color: $power-link-color;
+    } 
+    address {
+        @include inline-block();
+    }
+    br {
+        display:none;
+    }
+}
+
+.cms-index-index .contentTop { 
+    overflow:hidden;
+    margin:0 -$grid-gutter-width/2;
+    padding: 0 $grid-gutter-width/2;
+}
+
+.contact-info {
+    i.fa-home { margin-top:20px; @include rtl-margin-right(10px);}
+}
+.contact-customhtml {
+    li {
+        padding-bottom:10px;
+        em { @include rtl-margin-right(10px);}
+    }
+}

@@ -1,0 +1,15 @@
+.product-block{
+	.actions,
+	.a-quickview {
+		visibility: hidden;
+        @include opacity(0); 
+	}
+
+	&:hover {
+		.actions,
+		.a-quickview {
+			visibility: visible;
+            @include opacity(1);
+		}
+	}
+}

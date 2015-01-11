@@ -1,0 +1,15 @@
+$image-theme-path-base:'../../../images/';
+$image-theme-path : '../../../images/';
+
+
+$theme-color-default   : #ff9600; // using for default color of all pages such as background color for top menu, block header
+$theme-color-primary   : #222; // for hightligh block header, button as default it is  color
+$theme-color-secondary : #008309; 
+
+
+$theme-color 			: #f00;
+$theme-color-hover      : #000;
+
+$theme-color: $theme-color-default;
+$megamenu-link-hover-color : $theme-color-default;
+$product-name-hover-color: $theme-color-default;

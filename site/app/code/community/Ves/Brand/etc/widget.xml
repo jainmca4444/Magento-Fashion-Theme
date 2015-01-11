@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<widgets>
+<!-- Widget listing brands-->
+	<widget_brand_list type="ves_brand/widget_list">
+		<name>Ves Base : Brands Listing</name>
+		<description>Create List Brands Widget</description>
+		<parameters>
+			<show translate="label" module="core">
+                <visible>1</visible>
+                <label>Enabled</label>
+                <sort_order>1</sort_order>
+                <type>select</type>
+                <values>
+                    <yes translate="label">
+                        <label>Yes</label>
+                        <value>true</value>
+                    </yes>
+                    <no translate="label">
+                        <label>No</label>
+                        <value>false</value>
+                    </no>
+                </values>
+                <value>true</value>
+            </show> 
+
+            <brandnav_title translate="label" module="core">
+                <visible>1</visible>
+                <label>Module Title</label>
+                <sort_order>10</sort_order>
+                <type>text</type>
+            </brandnav_title>
+            <brandnav_limit translate="label" module="core">
+                <visible>1</visible>
+                <label>Limit Items</label>
+                <description>Maximum brands show on the module block</description>
+                <sort_order>10</sort_order>
+                <type>text</type>
+                <value></value>
+            </brandnav_limit>
+            <isdropdown translate="label" module="core">
+                <visible>1</visible>
+                <label>Is Dropdown </label>
+                <sort_order>20</sort_order>
+                <description>Display dropdown or UL list </description>
+                <type>select</type>
+                <values>
+                    <yes translate="label">
+                        <label>Yes</label>
+                        <value>true</value>
+                    </yes>
+                    <no translate="label">
+                        <label>No</label>
+                        <value>false</value>
+                    </no>
+                </values>
+                <value>false</value>
+            </isdropdown>
+
+            <template translate="label">
+				<visible>1</visible>
+                <label>Module Template</label>
+                <description>Input custom module template file path. For example: ves/brand/block/brandnav.phtml Empty for default</description>
+                <type>text</type>
+                <sort_order>340</sort_order>
+            </template> 
+		</parameters>
+	</widget_brand_list>
+<!-- Widget scroll brands-->
+    <widget_brand_scroll type="ves_brand/widget_scroll">
+        <name>Ves Base : Brands Scroll</name>
+        <description>Create Brands In Scroll Widget</description>
+        <parameters>
+            <show translate="label" module="core">
+                <visible>1</visible>
+                <label>Enabled</label>
+                <sort_order>1</sort_order>
+                <type>select</type>
+                <values>
+                    <yes translate="label">
+                        <label>Yes</label>
+                        <value>true</value>
+                    </yes>
+                    <no translate="label">
+                        <label>No</label>
+                        <value>false</value>
+                    </no>
+                </values>
+                <value>true</value>
+            </show> 
+
+            <scrollmod_title translate="label" module="core">
+                <visible>1</visible>
+                <label>Module Title</label>
+                <sort_order>10</sort_order>
+                <description>Title of scroll module</description>
+                <type>text</type>
+            </scrollmod_title>
+
+            
+            <itemvisiable translate="label" module="core">
+                <visible>1</visible>
+                <label>Items Visiable</label>
+                <sort_order>20</sort_order>
+                <description>Maximum brand show in module</description>
+                <type>text</type>
+                <value>8</value>
+            </itemvisiable>
+            
+            <columns translate="label" module="core">
+                <visible>1</visible>
+                <label>Columns</label>
+                <sort_order>30</sort_order>
+                <description>Number columns on carousel mode</description>
+                <type>text</type>
+                <value>4</value>
+            </columns>
+
+            <max_items>
+                <visible>1</visible>
+                <label>Max items on a page</label>
+                <type>text</type>
+                <sort_order>40</sort_order>
+                <value>4</value>
+            </max_items>
+
+            <template translate="label">
+                <visible>1</visible>
+                <label>Module Template</label>
+                <description>Input custom module template file path. For example: ves/brand/block/scroll.phtml Empty for default</description>
+                <type>text</type>
+                <sort_order>340</sort_order>
+            </template> 
+        </parameters>
+    </widget_brand_scroll>
+</widgets>

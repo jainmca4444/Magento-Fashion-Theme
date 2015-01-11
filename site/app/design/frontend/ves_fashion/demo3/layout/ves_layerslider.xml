@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>ves_layerslider/css/style.css</name></action>
+	   		<action method="addItem"><type>skin_css</type><name>ves_layerslider/css/typo.css</name></action>
+	   		<action method="addJs"><script>ves_layerslider/revolution/jquery.themepunch.plugins.min.js</script></action>
+	   		<action method="addJs"><script>ves_layerslider/revolution/jquery.themepunch.revolution.min.js</script></action>
+	  	</reference>
+	</default>
+	<cms_index_index translate="label">
+		<reference name="slideshowTop">
+			<block type="ves_layerslider/list" before="-" name="layerslider.list"/>		
+		</reference>
+	</cms_index_index>
+
+</layout>

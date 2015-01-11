@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Ves_ProductCategories</name>
+    <version>1.1.0</version>
+    <stability>stable</stability>
+    <license uri="http://www.opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>A sample version of Ves_ProductCategories for magento</summary>
+    <description>And more, the module is developed many features:</description>
+    <notes>Compatible with magento 1.4.x - 1.9.x</notes>
+    <authors><author><name>venustheme</name><user>venustheme</user><email>venustheme@gmail.com</email></author></authors>
+    <date>2014-12-25</date>
+    <time>08:00:26</time>
+    <contents><target name="magecommunity"><dir name="Ves"><dir name="ProductCategories"><dir name="Block"><file name="List.php" hash="d0c0cc62d5691cfa88d530ff0b5a67c8"/><dir name="System"><dir name="Config"><dir name="Form"><dir name="Field"><file name="Information.php" hash="16a9aa84b0bb191bd6efc78b428d438c"/></dir></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="798ac7d68dba5cc8e692a4ca79963d8e"/><file name="Media.php" hash="83c2635fe233cb3076f7172347385b14"/></dir><dir name="Model"><dir name="System"><dir name="Config"><dir name="Source"><file name="ListCategories.php" hash="fa2e622ffb40c0148fe7a4dcc20c51eb"/></dir></dir></dir></dir><dir name="controllers"><file name="IndexController.php" hash="5ee830033a98b2e63c8d27754259b79d"/></dir><dir name="etc"><file name="adminhtml.xml" hash="40faacedc662cc44242d64b5bcd4aca6"/><file name="config.xml" hash="803e59180d77f4b505682b83e082ddfd"/><file name="system.xml" hash="7f8e8d4c9c3429d3a399398b03b3e623"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Ves_ProductCategories.xml" hash="bdfc7b645d2dbf9717095304227f1ccb"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="ves"><dir name="productcategories"><file name="default.phtml" hash="cb6c8793675cc5b56e3256a7936ad7df"/></dir></dir></dir><dir name="layout"><file name="ves_productcategories.xml" hash="b4b97db79e503810c5e8e1a383d394d9"/></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="ves_productcategories"><file name="style.css" hash="2d3290fb95576a9debb490f809561994"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.1.0</max></php></required></dependencies>
+</package>

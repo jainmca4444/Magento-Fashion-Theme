@@ -1,0 +1,72 @@
+<?php 
+$cols =  (int)$this->getConfig( "columns" );
+$cols = !empty($cols)?$cols:1;
+$span = 12/$cols;
+?>
+
+
+<div class="contentBottom">
+    <div class="block <?php echo $prefix; ?> ">
+        <div class="block-title">
+            <strong>
+                <span><?php echo $title; ?></span>
+            </strong>
+        </div>
+        <div class="block-content">
+            <div class="custom-static1">
+                <div class="row">
+                <?php $_catalogCatgoryHelper = Mage::helper('catalog/category');
+                $cats = $this->getConfig('catsid');
+                $catIds = explode(',',$cats);
+                $number_check_limit = 1;
+                ?>
+                <?php foreach($catIds as $catId): 
+                    $category = Mage::getModel('catalog/category')->load($catId);
+
+                    if($number_check_limit <= $this->getConfig('limit')):?>
+                        <div class="col-lg-<?php echo $span;?> col-md-<?php echo $span;?> col-sm-<?php echo $span;?> col-xs-12">
+                        <div class="image pull-right">
+                            <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$category->getThumbnail()?>" alt="">
+                        </div>
+                        <div class="pull-left">        
+                            <h3><a href="<?php echo $_catalogCatgoryHelper->getCategoryUrl($category)?>">
+                                    <?php echo $category->getName()?>
+                                    <?php if($enable_price): ?>
+                                        (<?php echo $category->getProductCount() ?>)
+                                    <?php endif; ?>
+                            </a></h3>
+                            <?php
+                            /* Load category by id*/
+                            $cat = Mage::getModel('catalog/category')->load($category->getId());
+                            /*Returns comma separated ids*/
+                            $subCatIds = $cat->getChildren();
+                            ?>
+                            <ul class="custom-links">
+                            <?php foreach(explode(',',$subCatIds) as $subCat) :?>
+                            <li>
+                                <?php
+                                    $subCategory = Mage::getModel('catalog/category')->load($subCat);
+                                ?>
+                                    <a href="<?php echo $_catalogCatgoryHelper->getCategoryUrl($subCategory)?>">
+                                        <?php echo $subCategory->getName()?>(<?php echo $subCategory->getProductCount() ?>)
+                                    </a>
+                            </li>
+                            <?php endforeach; ?>
+                            </ul>
+
+                            <div class="view">
+                                <a href="<?php echo $_catalogCatgoryHelper->getCategoryUrl($category)?>"><br>View all</a>
+                            </div>
+                        </div>
+                        </div>
+                    <?php $number_check_limit ++ ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                </div>
+                <div class="clear clr">
+                
+            </div>
+        </div>
+    </div>
+</div>
+

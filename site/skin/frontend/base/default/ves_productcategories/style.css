@@ -1,0 +1,61 @@
+/* line 385, ../sass/app/_layout.scss */
+.contentBottom .module_customstatic {
+  position: relative;
+  overflow: hidden;
+  margin: 0!important;
+}
+/* line 389, ../sass/app/_layout.scss */
+.contentBottom .module_customstatic::before {
+  content: "";
+  position: absolute;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  display: table;
+  top: 1px;
+  width: 100%;
+}
+/* line 398, ../sass/app/_layout.scss */
+.contentBottom .module_customstatic::after {
+  content: "";
+  position: absolute;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  display: table;
+  bottom: 1px;
+  width: 100%;
+}
+/* line 407, ../sass/app/_layout.scss */
+.contentBottom .module_customstatic .block-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+/* line 410, ../sass/app/_layout.scss */
+.contentBottom .module_customstatic .block-title span {
+  background: #333333!important;
+  color: white;
+  padding: 6px 20px !important;
+}
+/* line 416, ../sass/app/_layout.scss */
+.contentBottom .module_customstatic .block-content {
+  padding: 0 16px;
+}
+.custom-static1{
+    color: 6e6e6e;
+}
+.custom-static1 h3{color: #333333;}
+.custom-static1 li{
+        line-height: 25px;
+        list-style-type: disc;
+        margin-left:12px;
+        
+}
+.custom-static1 li a:hover{text-decoration: none;}
+.custom-static1 .custom-links{float: left;}
+.custom-static1 .view {
+padding-top: 17px;
+padding-bottom: 10px;
+}
+.custom-static1 .view a {
+color: #6dced7;
+text-transform: uppercase;
+}

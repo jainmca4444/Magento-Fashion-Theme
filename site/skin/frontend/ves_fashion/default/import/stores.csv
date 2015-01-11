@@ -1,0 +1,12 @@
+Store_Id,Code,Website_id,Group_Id,Name,Sort_Order,Is_Active
+1,default,1,1,"Main Store &gt; English",0,1
+3,french,1,1,"Main Store &gt; French",0,1
+2,german,1,1,"Main Store &gt; German",0,1
+4,english1,1,2,"Demo1 &gt; English",1,1
+6,english2,1,3,"Demo2 &gt; English",1,1
+8,english3,1,4,"Demo3 &gt; English",1,1
+10,english4,1,5,"Demo4 &gt; English",1,1
+5,french1,1,2,"Demo1 &gt; French",2,1
+7,french2,1,3,"Demo2 &gt; French",2,1
+9,french3,1,4,"Demo3 &gt; French",2,1
+11,french4,1,5,"Demo4 &gt; French",2,1

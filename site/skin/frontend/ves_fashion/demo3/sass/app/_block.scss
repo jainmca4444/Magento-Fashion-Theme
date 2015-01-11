@@ -1,0 +1,160 @@
+/* block */
+.#{$block-selector} {
+    margin-bottom: $block-module-margin-bottom;
+    border: none;
+    .#{$block-heading-selector}{
+       font-size: $font-size-base + 1;
+       font-family: $font-headding-family;
+       text-align: center;
+       position: relative;
+       text-transform: uppercase;
+       letter-spacing: 2px;
+       color: $theme-color-default;
+    
+       &:before{
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            background: $theme-color-secondary;
+            top: 50%;
+            content: "";
+            @include rtl-left(0);
+       }
+
+       strong {
+            background: $white;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 99;
+        }
+        
+    }
+    .#{$block-content-selector} {
+        @include clearfix();
+        padding:  30px 0;
+    }
+      
+    &.nopadding{
+        .#{$block-content-selector}{
+            padding:0;
+            margin: 0;
+        }
+    }
+}
+
+// Contextual variations
+.#{$block-prefix}-theme {
+  @include block-variant($panel-default-border, $white, $theme-color, $panel-default-border);
+}
+.#{$block-prefix}-default {
+  @include block-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+}
+.#{$block-prefix}-primary {
+  @include block-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
+}
+.#{$block-prefix}-success {
+  @include block-variant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
+}
+.#{$block-prefix}-info {
+    @include block-variant($panel-info-border, $theme-color-default, $nocolor, $panel-info-border);
+    @include rtl-text-align-left();
+    .#{$block-heading-selector}{
+        @include rtl-text-align-left();
+        &:before { display:none;}
+        strong{ padding:0;}
+    }
+    .#{$block-content-selector} {
+        padding: 10px 0;
+    }
+}
+.#{$block-prefix}-warning {
+  @include block-variant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
+}
+.#{$block-prefix}-danger {
+  @include block-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
+}
+
+.#{$block-prefix}-highlighted {
+    @include block-variant($theme-color-default, $white, $theme-color-default, $theme-color);
+    .#{$block-content-selector}{ 
+        border-color:$theme-color-default;
+        border-width:2px;
+    }    
+}
+
+/* block inline style */
+.#{$block-prefix}-inline{
+    .icon{
+        font-size: 35px;
+    }
+    .explain{
+        font-size:  11px;
+    }
+    .#{$block-content-selector}{
+        color: $white;
+        position: relative;                                                             
+        text-transform: $block-module-heading-transform;
+        font-family: $block-module-heading-font-family;    
+             
+        font-size: $block-module-heading-font-size;
+    }  
+    .input-group{
+        width: 98%
+    }   
+}
+ 
+.sidebar {
+    .#{$block-selector} {
+        .#{$block-heading-selector}{
+            background: #000 url(#{$image-theme-path-base}bg-sb-title.png) no-repeat 10px 8px ;
+            font-size: 12px;
+            text-transform: uppercase;  
+            padding: 0 28px;
+            @include rtl-text-align-left();
+
+            &:before { display: none;}
+
+            strong {
+                background:none;
+                padding:0;
+                span {
+                    color: $block-module-title-color;
+                    text-transform: uppercase;
+                    font-size: $block-module-title-fontsize;
+                    line-height: 28px;              
+                }
+            }
+            a { text-decoration:none !important; }
+        }
+
+        .#{$block-content-selector} {
+            padding:  10px 0;
+        }
+    }
+
+    .#{$app-brand-prefix}-custom {
+       border:none;
+       .#{$block-prefix}-heading {
+            border:none;
+            background:$theme-color;
+            font-size: $font-size-base + 5;
+        }
+        .#{$block-prefix}-content{
+            border:none;
+        }
+    }
+    .#{$block-prefix}-heading {
+            padding: 20px 40px;
+            border-bottom: 1px solid $border-color;
+            border-top:3px solid $black;
+             &:after{
+                content: "";
+                position: absolute;
+                bottom: 48%;
+                background: $black;
+                @include size (10px, 3px);
+                @include rtl_right(30px);
+            }
+    }  
+}    
+

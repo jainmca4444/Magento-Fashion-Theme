@@ -1,0 +1,42 @@
+.product-block{
+	.actions,
+	.a-quickview {
+		visibility: hidden;
+        @include opacity(0); 
+	}
+
+	&:hover {
+		.actions,
+		.a-quickview {
+			visibility: visible;
+            @include opacity(1);
+		}
+	}
+}
+
+.effect{
+  a{
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    &:before{
+      background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3);
+      @include rtl-left(0);
+      @include opacity(0);
+      top: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      @include transition(all 0.5s ease-in-out 0.2s);
+      @include size(100%, 100%);
+    }
+    &:hover{
+      &:before{
+        @include opacity(1);
+        z-index: 2;
+        top: 100%;
+      }
+    }
+  }
+}

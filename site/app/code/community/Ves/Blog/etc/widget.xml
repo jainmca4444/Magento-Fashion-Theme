@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<widgets>
+    <blog_latest type="ves_blog/widget_latest"  translate="label description" module="ves_blog" >
+        <name>Ves Blog : Latest articles</name>
+        <description type="desc">show list latest news</description>
+        <parameters>
+            <enable_latestmodule translate="label" module="core">
+				<label>Enable Latest Module</label>
+				<sort_order>200</sort_order>
+				<comment>Show related post by tag</comment>
+				<type>select</type>
+				<values>
+                    <yes translate="label">
+                        <label>Yes</label>
+                        <value>true</value>
+                    </yes>
+                    <no translate="label">
+                        <label>No</label>
+                        <value>false</value>
+                    </no>
+                </values>
+				<visible>1</visible>
+				<required>1</required>
+				<value>true</value>
+			</enable_latestmodule>
+			<latestmod_title translate="label" module="core">
+				<label>Module Title</label>
+				<sort_order>201</sort_order>
+				<description>Maximum blog show in module</description>
+				<type>text</type>
+				<visible>1</visible>
+				<required>1</required>
+			</latestmod_title>
+
+			<latestmod_desc translate="label" module="core">
+				<label>Module Description</label>
+				<sort_order>202</sort_order>
+				<description>Maximum blog show in module</description>
+				<type>ves_blog/widget_wysiwyg</type>
+				<visible>1</visible>
+				<required>0</required>
+			</latestmod_desc>
+						
+			<latest_typesource translate="label">
+                <label>Source Type</label>
+                <type>select</type>
+                <source_model>ves_blog/system_config_source_ListSourceType</source_model>
+                <sort_order>203</sort_order>
+				<description>Which pages does the module show...</description>
+                <visible>1</visible>
+				<required>0</required>
+				<value>latest</value>
+            </latest_typesource>
+
+            <enable_blognavmodule translate="label" module="core">
+                <label>Enable Navigator Module</label>
+                <sort_order>204</sort_order>
+                <description>Show Navigator Carosel</description>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <visible>1</visible>
+                <required>0</required>
+                <value>0</value>
+            </enable_blognavmodule>
+
+            <auto_play>
+                <label>Auto Play</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <sort_order>205</sort_order>
+                <visible>1</visible>
+                <required>0</required>
+                <value>0</value>
+            </auto_play>
+
+            <interval>
+                <label>Speed</label>
+                <type>text</type>
+                <sort_order>206</sort_order>
+                <visible>1</visible>
+                <required>0</required>
+                <value>500</value>
+            </interval>
+
+			<limit_items translate="label" module="core">
+				<label>Limit Post</label>
+				<sort_order>207</sort_order>
+				<description>Maximum blog show in module</description>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<value>6</value>
+			</limit_items>
+						
+			<columns translate="label" module="core">
+				<label>Items show in N columns</label>
+				<sort_order>208</sort_order>
+				<description>Limit Post will be showed</description>
+				<type>text</type>
+				<visible>1</visible>
+				<required>0</required>
+				<value>2</value>
+			</columns>
+						 
+			<latest_show_commentcouter translate="label" module="core">
+                <label>Show Comment Counter</label>
+                <sort_order>210</sort_order>
+                <description>Whethere to show Comment Counter</description>
+                <type>select</type>
+                <values>
+                    <yes translate="label">
+                        <label>Yes</label>
+                        <value>true</value>
+                    </yes>
+                    <no translate="label">
+                        <label>No</label>
+                        <value>false</value>
+                    </no>
+                </values>
+                <visible>1</visible>
+				<required>false</required>
+            </latest_show_commentcouter>
+
+            <latest_showcreated translate="label" module="core">
+                <label>Show Created Time</label>
+                <sort_order>220</sort_order>
+                <description>Whethere to show Created Time</description>
+                <type>select</type>
+                <values>
+                    <yes translate="label">
+                        <label>Yes</label>
+                        <value>true</value>
+                    </yes>
+                    <no translate="label">
+                        <label>No</label>
+                        <value>false</value>
+                    </no>
+                </values>
+                <visible>1</visible>
+				<required>0</required>
+				<value>true</value>
+            </latest_showcreated>
+                    
+            <latest_show_hits translate="label" module="core">
+                <label>Show Hits</label>
+                <sort_order>230</sort_order>
+                <description>Whethere to show number view</description>
+                <type>select</type>
+                <values>
+                    <yes translate="label">
+                        <label>Yes</label>
+                        <value>true</value>
+                    </yes>
+                    <no translate="label">
+                        <label>No</label>
+                        <value>false</value>
+                    </no>
+                </values>
+                <visible>1</visible>
+				<required>0</required>
+				<value>true</value>
+            </latest_show_hits>
+            <template translate="label">
+                <visible>1</visible>
+                <label>Module Template</label>
+                <description>Input custom module template file path. For example: ves/blog/block/latest_carousel.phtml or ves/blog/block/latest.phtml Empty for default</description>
+                <type>text</type>
+                <sort_order>250</sort_order>
+            </template>
+        </parameters>
+    </blog_latest>   
+</widgets>

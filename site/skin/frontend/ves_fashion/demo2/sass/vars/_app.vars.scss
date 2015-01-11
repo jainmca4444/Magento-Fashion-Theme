@@ -1,0 +1,130 @@
+/**
+ * Web Application Prefix Apply For Making Owner Styles
+ */
+$app-brand-prefix        : ves !default;
+
+/**
+ *   Blocks Layout Selectors 
+ */
+
+$block-prefix 			 : block !default;
+$block-selector          : block !default;
+$block-heading-selector  : block-title !default;
+$block-content-selector  : block-content !default;
+
+/**
+ * Product Item Selectors
+ */
+$products-container-selector : products_block !default;
+$products-row-selector 		 : products-row !default;
+$products-col-selector 		 : product-col !default;
+
+
+//------- Path Variables
+$image-path:                   "images/"!default;
+$font-custom-path:             "../font/"!default;
+$image-base-path:              "../../../img/"!default;
+$image-skin-path:              "../../img/icon/"!default;
+$image-module-path:            "../../../img/icon/"!default;
+$module-path:                  "../../../modules/"!default;
+
+
+$image-theme-path:             "../images/" !default;
+$theme-font-path:          	   "../fonts/" !default;
+
+
+/***********************************************************************/
+// some basic colors
+
+$sky:                  			    #7bbd42 !default;  // Skin sky
+$blue:                              #6087D2 !default;  // Skin blue
+$yellow:                  			#ffc801 !default;  // Skin yellow
+$coral:								#EE6C92 !default;  // Slin Coral
+$rico:								#51BAA9 !default;  // Skin Rico
+$green:                 			#29C76A !default;  // Skin Green
+$red:                   			#e27f7a !default;  // Skin Red
+$pink:                  			#c3325f !default;
+$white:			 				    #FFFFFF !default;
+$black:							    #000000 !default;
+$cyandark:   						#4e4d49 !default;
+$orange:                			#df995e !default;
+$aqua: 								#75aab8 !default;
+$turquoise:                         #4ACFD4 !default;  // label new
+$nav-border-color-hover:            #e2e2e2 !default;
+$golden-poppy:                      #F2BE01 !default;
+$valencia:      					#D44A4A !default;
+$tundora:                           #8c8c8c !default;  // Topbar + Vertical Menu Content
+$wild-sand:                         #ffffff !default;  // Background Body - default
+$silver:                            #f5f5f5 !default; 
+
+//------- Themes colors
+$red-light:            				#ff9999!default;
+$yellow-light:           			#ffdc73!default;
+$nocolor:							transparent!default;
+
+// some basic font family
+// ========================================================================
+$font-tamoha: "tahoma";
+$font-arial: "Arial";
+
+
+// Variables paths 
+// ========================================================================
+
+$font-family:			 			 "Noticia Text"!default;
+$font-family-secondary :             "brandon_grotesquelight"!default;
+$font-family-tertiary  :             "brandon_grotesquebold"!default;
+$font-family-senary    : 		 	 "brandon_grotesquelight"!default;
+$font-family-three     :             "RobotoRegular"!default;
+$font-icon-family 	   : 			 "FontAwesome"!default;
+
+//////////////////// Variables defined for Themes + Skins ////////////////
+
+$theme-color-default : 			    #000 !default;
+$theme-color-primary :				#b34a4a !default;
+$theme-color-secondary : 			#3b3b3b !default;   
+$theme-color-tertiary:              #999 !default;
+
+$font-body-family	   	: "Noticia Text"!default;
+$font-headding-family  	: "brandon_grotesque_regularRg"!default;
+$font-menu-family      	: "brandon_grotesque_regularRg"!default;
+$font-highlighted-family: "tahoma"!default;
+
+$theme-bg-default		: $gray-lighter!default; 
+$theme-bg-secondary 	: $red!default; // using variable  for Theme  Skin 
+$theme-bg-threedary  	: $brand-warning!default; // using skin product list
+
+$border-color:          #e7e7e7 !default;
+
+$table-bg-color:        #e7e7e7 !default;
+
+/*------------------ User ------------------*/
+
+$body-background 						: #fff; //fff
+$base-color								: #666; //666
+$base-link-color						: #666; //666
+$base-link-color-active					: #000; //666
+$border-color 							: #E4E4E4; //E4E4E4 
+
+/* NAV */
+$nav-lv1-color							: #000; //000
+$nav-lv1-color-hover					: #000; //000
+
+
+/* Heading */
+$h_color								: #999; //999
+$h_color-hover							: #666; //999
+$h_active-color							: #000; //000
+
+/* Product */
+$p_name-color							: #000; //000
+$p_name-color-hv						: #666; //000
+$p_price-color							: $theme-color-default; //000
+$p_special-price-color					: #b34a4a; //b34a4a
+$p_old-price-color						: #999; //999
+
+/* Setting */
+$topbar-border-color						: $theme-color-default transparent $border-color;
+$navbar-border-color						: $border-color transparent $theme-color-default;
+
+/*------------------ End User ------------------*/

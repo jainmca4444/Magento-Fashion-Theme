@@ -1,0 +1,165 @@
+/* block */
+.#{$block-selector} {
+    margin-bottom: $block-module-margin-bottom;
+    border: none;
+    .#{$block-heading-selector}{
+        background:#000;
+        font-size: 12px;
+        text-transform: uppercase;  
+        padding: 0 35px;
+        position:relative;
+        &:before {
+            color: $white;
+            content: "\f005";
+            @include inline-block();
+            font-family: "FontAwesome";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            position: absolute;
+            @include rtl-left(20px);
+            top: 18px;
+        }
+
+        strong {
+            span {
+                color: $block-module-title-color;
+                text-transform: uppercase;
+                font-size: $block-module-title-fontsize;
+                line-height: 28px;              
+            }
+        }
+        a { text-decoration:none !important; }
+
+        
+
+    }
+    .#{$block-content-selector} {
+        @include clearfix();
+        padding:  10px 0;
+    }
+      
+    &.nopadding{
+        .#{$block-content-selector}{
+            padding:0;
+            margin: 0;
+        }
+    }
+}
+
+// Contextual variations
+.#{$block-prefix}-theme {
+  @include block-variant($panel-default-border, $white, $theme-color, $panel-default-border);
+}
+.#{$block-prefix}-default {
+  @include block-variant($panel-default-border, $panel-default-text, $panel-default-heading-bg, $panel-default-border);
+}
+.#{$block-prefix}-primary {
+  @include block-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
+}
+.#{$block-prefix}-success {
+  @include block-variant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);
+}
+.#{$block-prefix}-info {
+  @include block-variant($panel-info-border, $panel-info-text, $theme-color, $panel-info-border);
+}
+.#{$block-prefix}-warning {
+  @include block-variant($panel-warning-border, $panel-warning-text, $panel-warning-heading-bg, $panel-warning-border);
+}
+.#{$block-prefix}-danger {
+  @include block-variant($panel-danger-border, $panel-danger-text, $panel-danger-heading-bg, $panel-danger-border);
+}
+
+.#{$block-prefix}-highlighted {
+    border: 1px solid $theme-color-default;
+    @include block-variant($theme-color-default, $white, $theme-color-default, $theme-color);
+    .#{$block-heading-selector}{
+        &:before {
+            content: "\f0c9";
+        }
+    }
+    .#{$block-content-selector} {
+        padding:0;
+    }
+
+}
+
+/* block inline style */
+.#{$block-prefix}-inline{
+    .icon{
+        font-size: 35px;
+    }
+    .explain{
+        font-size:  11px;
+    }
+    .#{$block-content-selector}{
+        color: $white;
+        position: relative;                                                             
+        text-transform: $block-module-heading-transform;
+        font-family: $block-module-heading-font-family;    
+             
+        font-size: $block-module-heading-font-size;
+    }  
+    .input-group{
+        width: 98%
+    }   
+}
+ 
+.sidebar {
+    .#{$app-brand-prefix}-custom {
+       border:none;
+       .#{$block-prefix}-heading {
+            border:none;
+            background:$theme-color;
+            font-size: $font-size-base + 5;
+
+        }
+        .#{$block-prefix}-content{
+            border:none;
+        }
+    }
+
+    .#{$block-selector} {
+        .#{$block-heading-selector} {
+            strong {
+                span {
+                    line-height: 45px;              
+                }
+            }
+            &:after {
+                color: $white;
+                content: "\f107";
+                @include inline-block();
+                font-family: "FontAwesome";
+                font-size: 12px;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 1;
+                position: absolute;
+                @include rtl-right(20px);
+                top: 18px;
+            }
+        } 
+
+    }
+     
+}    
+
+/* block style in main content */
+#content{
+    .#{$app-brand-prefix}-custom {
+        .#{$block-content-selector} {
+            border:none;
+            background:none;
+            color:$block-module-footer-heading-color;
+        }
+        .#{$block-content-selector}{
+            border:none;
+        }
+    }     
+    .#{$block-content-selector}{
+        padding:0;
+        margin: 0;
+    }
+}

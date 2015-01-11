@@ -1,0 +1,53 @@
+<div class="product-categories">
+    <div class="block <?php echo $prefix; ?> ">
+        <div class="block-content">
+            <div class="custom-static1">
+                <div class="row">
+                    <?php $_catalogCatgoryHelper = Mage::helper('catalog/category');
+                    $cats = $this->getConfig('catsid');
+                    $catIds = explode(',',$cats);
+                    $number_check_limit = 1;
+                    ?>
+                    <?php foreach($catIds as $catId): 
+                        $category = Mage::getModel('catalog/category')->load($catId);
+
+                        if($number_check_limit <= $this->getConfig('limit')):?>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                <div class="wapper">
+                                    <a href="<?php echo $_catalogCatgoryHelper->getCategoryUrl($category)?>">
+                                    <div class="image pull-right">
+                                        <div class="img-overlay">
+                                            <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$category->getThumbnail()?>" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="pull-left">
+                                        <h3>    <span> <?php echo $this->__("Shop") ?> </span>
+                                                <span class="categories-title">
+                                                        <?php echo $category->getName()?>
+                                                    </span>
+                                                <?php if($enable_price): ?>
+                                                <span class="item">
+                                                    <?php echo $category->getProductCount() ?> <?php echo $this->__("items") ?>
+                                                </span>
+                                                <?php endif; ?>
+                                        </h3>
+                                        <?php
+                                        /* Load category by id*/
+                                        $cat = Mage::getModel('catalog/category')->load($category->getId());
+                                        /*Returns comma separated ids*/
+                                        $subCatIds = $cat->getChildren();
+                                        ?>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        <?php $number_check_limit ++ ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+                <div class="clear clr"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,94 @@
+<?php 
+	$itemsperpage = (int)$this->getConfig("max_items") ;
+	$itemsperpage = !empty($itemsperpage)?$itemsperpage:6;
+	$columns = (int)$this->getConfig("columns");
+	$columns = !empty($columns)?$columns:6;
+
+	$c = $this->getGeneralConfig( 'brand_imagesize', "" );
+	$tmp = explode( "x", $c );
+	$thumb_width = $thumb_height = "";
+	if( count($tmp) > 0 && (int)$tmp[0] ){
+		$thumb_width = (int)$tmp[0];
+		$thumb_height = (int)$tmp[1];
+	}
+	$id = rand(1,10); 
+	$span =  12/$columns;
+	$total = count($brands);
+	$i = 1;
+	$k = 1;
+	$title = $this->getGeneralConfig("title");
+	// check max item on page
+	if ($itemsperpage < $columns) {
+		$itemsperpage = $columns;
+	}
+?>
+<div id="ves-brandcarousel" class="block ves-brandcarousel">
+	<?php if($title) { ?>
+	<div class="block-title">
+		<strong>
+			<span>
+				<?php echo $title; ?>
+			</span>
+		</strong>	
+	</div>
+	<?php } ?>
+		<div class="block-content">
+    <div id="vesbrandcarousel<?php echo $id;?>" class="carousel slide vescarousel hidden-xs">
+		<div class="carousel-inner">
+			<?php if($brands) { ?>
+				<?php foreach ($brands as  $brand) {?>		
+				<?php if( $i == 1) { ?>
+				<div class="item <?php if(($k-1)==0) { ?>active<?php } ?>">
+				<?php } ?>
+				<?php if( ($i%$columns == 1 || $i%$itemsperpage == 0) && $columns < $itemsperpage ) { ?>
+					<div class="row">
+				<?php } ?>
+				<?php if( $i%$columns == 1 && $columns >= $itemsperpage) { ?>
+					<div class="row">
+				<?php } ?>
+					<div class="col-lg-<?php echo $span;?> col-xs-6 col-sm-2">
+						<div class="item-inner">
+							<?php $brand_link = $brand->getLink(); ?>
+							<?php
+							 $image = "";
+							 if($thumb_width && $thumb_height) {
+							 	$image = Mage::helper('ves_brand')->resize($brand->getFile(), $thumb_width, $thumb_height);
+							 } else {
+							 	$image = $brand->getImageUrl("l");
+							 }
+							?>
+							<?php if ($brand_link) { ?>
+							<a href="<?php echo $brand_link; ?>"><img src="<?php echo $image; ?>" alt="<?php echo $brand->getTitle(); ?>" class="img-responsive" /></a>
+							<?php } else { ?>
+							<img src="<?php echo $image; ?>" alt="<?php echo $brand->getTitle(); ?>" class="img-responsive" />
+							<?php } ?>
+						</div>
+					</div>	
+					<?php if( ($i%$columns == 0 || $i % $itemsperpage == 0 || $k == $total) && $columns < $itemsperpage) { ?>
+					</div> <!--end row > -->
+				<?php } ?>
+				<?php if( ($i%$columns == 0 || $k == $total) && $columns >= $itemsperpage) { ?>
+					</div><!--end row >= -->
+				<?php } ?>
+				<?php if( ($i % $itemsperpage == 0 || $k == $total) && $columns <= $itemsperpage) { $i=0 ?>
+					</div> <!--end item -->
+				<?php } ?>
+				<?php $i++;$k++; }  ?>
+			</div>
+			<?php } //end if?>
+		<?php if( (int)$total > $columns ){ ?>	
+		<?php if( $this->getModuleConfig("enable_brandnavmodule") ){ ?>
+		<div class="carousel-controls">
+			<a class="carousel-control left fa fa-angle-left" href="#vesbrandcarousel<?php echo $id;?>" data-slide="prev"></a>
+			<a class="carousel-control right fa fa-angle-right" href="#vesbrandcarousel<?php echo $id;?>" data-slide="next"></a>
+		</div>
+		<?php } ?>
+		<?php } ?>
+    </div> <!--end vesbrandcarousel -->  
+	</div> <!--end block-content -->
+</div> <!--end ves-brandcarousel -->
+<?php if( (int)$total > 1 ){ ?>
+<script type="text/javascript"><!--
+ jQuery('#vesbrandcarousel<?php echo $id;?>').carousel({interval:false});
+--></script>
+<?php } ?>

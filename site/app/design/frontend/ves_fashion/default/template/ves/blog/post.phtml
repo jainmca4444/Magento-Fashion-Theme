@@ -1,0 +1,120 @@
+<?php 
+ /*------------------------------------------------------------------------
+  # Ves Blog Module 
+  # ------------------------------------------------------------------------
+  # author:    Ves.Com
+  # copyright: Copyright (C) 2012 http://www.ves.com. All Rights Reserved.
+  # @license: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+  # Websites: http://www.ves.com
+  # Technical Support:  http://www.ves.com/
+-------------------------------------------------------------------------*/
+?>
+<div class="blog-post">
+	<div class="blog-wrapper">
+		<?php if( $post = $this->getPost() ): ?>
+	 
+		<div class="blog-content">
+			<div class="blog-container">
+				<?php if( $this->getPostConfig("post_showtitle") ): ?>
+					<h2 class="blog-title"><?php echo $post->getTitle(); ?></h2>
+				<?php endif; ?>
+
+				<div class="row no-margin blog-meta">
+					<ul>
+						<li class="created-date"> 
+							<span class="icon-time"> <?php echo $this->__("Created By :");?></span> 
+							<?php echo $post->getCreated();?>	
+						</li>
+						<li class="author">  
+							<span class="icon-pencil"> <?php echo $this->__("Write By:");?> </span> 
+							<a href="<?php echo $post->getAuthorURL();?>" title="<?php echo $post->getAuthor(); ?>">
+							<?php echo $post->getAuthor(); ?>
+							</a>
+						</li>
+
+						<li class="blog-category">
+							<?php if( $this->getType() !="category" && $this->getListConfig("list_category_title") ): ?>
+							<span class="icon-user"> <?php echo $this->__("Published In:");?> </span> 
+							<a title="<?php echo $post->getCatTitle();?>" href=""><?php echo $post->getCatTitle();?></a>
+							<?php endif; ?>
+					    </li>
+						
+						<li class="blog-hits">
+							<span><?php echo $this->__("Read");?></span> <strong><?php echo $post->getHits(); ?></strong> <?php echo $this->__("Times"); ?>
+						</li>
+
+						<li class="blog-comment-count">
+							<span class="icon-comments"><?php echo $this->__("Commen:");?> </span> <?php if($this->getListConfig("list_show_commentcouter")) 
+							{ ?> <?php echo $this->getCountingComment($post->getId());?> <?php  echo $this->__("Comment");?><?php } ?>
+						</li>
+						<li class="blog-bottom">
+							<?php if( $tags = $post->getTags() ) :$tags = explode( ",",$tags );	?>
+								<div class="blog-tags">
+									<span><?php echo $this->__("Tags :");?> </span>
+									<?php foreach( $tags as $tag ): ?>
+									<a href="<?php echo Mage::helper('ves_blog')->getTagUrl(trim($tag));?>" title="<?php echo $tag;?>"><span><?php echo $tag; ?><span></a>, 
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
+						</li>
+							
+					</ul>
+				</div>
+
+				<?php if( $post->getFile() ): ?>
+				<div class="blog-image"><img class="img-responsive" src="<?php echo $post->getImageURL( $this->getPostConfig("post_imagetype") );?>" title="<?php echo $post->getTitle();?>"/></div>
+				<?php endif; ?>
+
+				
+
+				<?php if( $this->getPostConfig("post_showdescription") ): ?>
+				<div class="blog-description ves-description">
+					<?php echo $post->getDescription(); ?>
+				</div>
+				<?php endif; ?>
+
+				<div class="blog-detail">
+					<?php echo $post->getDetailContent(); ?>
+				</div>
+			</div>
+			
+			<?php if( $this->getPostConfig("post_showsocial") ): ?>
+			<div class="blog-social">
+				<?php echo $this->getChildHtml('post.social'); ?>
+			</div>
+			<?php endif; ?>	
+			<div class="blog-extra vesclear">
+			<?php if( $this->getPostConfig("post_showmorepost") && $mores = $this->getMoreInCat() ): ?>
+				<div class="more-post">
+					<h3><?php echo $this->__("More post in same category");?></h3>
+					<ul>
+					<?php foreach( $mores as $more ) : ?>
+						<li><a href="<?php echo $more->getURL();?>" title="<?php echo $more->getTitle();?>"><span><?php echo $more->getTitle();?></span></a></li>
+					<?php endforeach; ?>
+					</ul>	
+				</div>
+			<?php endif; ?>
+			<?php if( $this->getPostConfig("post_showrelatedpost") && $related = $this->getRelatedPost() ): ?>
+				<div class="related-post">
+					<h3><?php echo $this->__("Related by tags");?></h3>
+					<ul>
+					<?php foreach( $related as $relate ) : ?>
+						<li><a href="<?php echo $relate->getURL();?>" title="<?php echo $relate->getTitle();?>"><span><?php echo $relate->getTitle();?></span></a></li>
+					<?php endforeach; ?>
+					</ul>	
+				</div>
+			<?php endif; ?>
+			</div>
+			
+			<?php if( $this->getPostConfig("post_showcommentblock") ) :?>
+			<div class="blog-comment">
+				<?php echo $this->getChildHtml('post.comment'); ?>
+			</div>
+			<?php endif; ?>
+		</div>
+		
+		<?php else: ?>
+		<div class="message"><?php echo $this->__( "The post could not existed in our system" );?></div>
+		<?php endif; ?>
+	</div>
+</div>
